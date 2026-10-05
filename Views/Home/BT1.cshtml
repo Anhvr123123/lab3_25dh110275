@@ -1,0 +1,137 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<script src="~/Scripts/myJVS/BT2.js"></script>
+    <script src="~/Scripts/myJVS/BT1.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu tham gia CLB Tin học LUBU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+            .title span {
+                color: #00aeff;
+            }
+
+        .form-table {
+            border-collapse: collapse;
+            width: 650px;
+            margin: 0 auto;
+            border: 2px solid #555;
+        }
+
+            .form-table td {
+                padding: 8px 12px;
+                border-bottom: 1px solid #ddd;
+                font-size: 14px;
+            }
+
+                .form-table td:first-child {
+                    width: 130px;
+                    color: #333;
+                }
+
+        input[type="text"], select {
+            padding: 4px 6px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .txt-input {
+            width: 180px;
+        }
+        .err-msg {
+            color: red;
+            font-style: italic;
+        }
+
+        .success-msg {
+            color: blue;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .btn-container {
+            padding: 10px 0;
+        }
+
+        .btn-submit {
+            padding: 3px 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">PHIẾU THAM GIA CLB TIN HỌC <span>LUBU</span></div>
+
+    <form id="registerForm">
+        <table class="form-table">
+            <tr>
+                <td>Mã sinh viên :</td>
+                <td><input type="text" id="txtMaSV" class="txt-input" placeholder="Nhập Mã SV"></td>
+                <td id="errMaSV" class="err-msg"></td>
+            </tr>
+            <tr>
+                <td>Họ và tên :</td>
+                <td><input type="text" id="txtHoTen" class="txt-input" placeholder="Nhập Họ và tên"></td>
+                <td id="errHoTen" class="err-msg"></td>
+            </tr>
+            <tr>
+                <td>Tuổi :</td>
+                <td><input type="text" id="txtTuoi" class="txt-input" placeholder="Nhập tuổi > 18"></td>
+                <td id="errTuoi" class="err-msg"></td>
+            </tr>
+            <tr>
+                <td>Ngoại ngữ :</td>
+                <td>
+                    <label><input type="checkbox" name="chkNgoaiNgu" value="Anh"> Anh</label>
+                    <label><input type="checkbox" name="chkNgoaiNgu" value="Pháp"> Pháp</label>
+                    <label><input type="checkbox" name="chkNgoaiNgu" value="Nhật"> Nhật</label>
+                </td>
+                <td id="resNgoaiNgu" class="err-msg"></td>
+            </tr>
+            <tr>
+                <td>Chuyên ngành :</td>
+                <td colspan="2">
+                    <select id="ddlChuyenNganh" onchange="updateSoTruong()">
+                        <option value="Hệ thống">Hệ thống</option>
+                        <option value="Phần mềm">Phần mềm</option>
+                        <option value="Mạng máy tính">Mạng máy tính</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Sở trường :</td>
+                <td colspan="2">
+                    <i id="lblSoTruong">Phân tích & Thiết kế</i>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="button" class="btn-submit" onclick="validateForm()">Đăng ký</button>
+                </td>
+                <td id="lblStatus" class="err-msg"></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

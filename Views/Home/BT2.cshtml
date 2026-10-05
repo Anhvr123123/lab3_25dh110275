@@ -1,0 +1,179 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin giao hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .form-container {
+            border: 1px solid #777;
+            width: 600px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            box-sizing: border-box;
+        }
+
+        .form-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 5px;
+        }
+
+            .form-group label {
+                font-size: 12px;
+                font-weight: bold;
+                color: #444;
+                margin-bottom: 3px;
+            }
+
+            .form-group input[type="text"] {
+                padding: 5px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                outline: none;
+            }
+
+        .error-msg {
+            color: red;
+            font-size: 11px;
+            font-style: italic;
+            min-height: 15px;
+            margin-top: 2px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .btn-option {
+            padding: 5px 10px;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        .btn-vanphong {
+            background-color: #3182ce;
+        }
+
+        .btn-nharieng {
+            background-color: #48bb78;
+        }
+
+        .btn-save {
+            background-color: #e53e3e;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="form-title">Thông tin giao hàng</div>
+        <hr>
+
+        <form id="shippingForm">
+            <div class="form-grid">
+                <!-- Cột trái -->
+                <div>
+                    <div class="form-group">
+                        <label>Tên</label>
+                        <input type="text" id="txtName">
+                        <span id="errName" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Số điện thoại</label>
+                        <input type="text" id="txtPhone">
+                        <span id="errPhone" class="error-msg"></span>
+                    </div>
+                </div>
+
+                <!-- Cột phải -->
+                <div>
+                    <div class="form-group">
+                        <label>Địa chỉ nhận hàng</label>
+                        <input type="text" id="txtAddress">
+                        <span id="errAddress" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tỉnh / thành phố</label>
+                        <input type="text" id="txtCity">
+                        <span id="errCity" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Quận / Huyện</label>
+                        <input type="text" id="txtDistrict">
+                        <span id="errDistrict" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phường / Xã</label>
+                        <input type="text" id="txtWard">
+                        <span id="errWard" class="error-msg"></span>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Lựa chọn địa chỉ -->
+            <div class="form-group">
+                <label>Lựa chọn tên cho địa chỉ thường dùng</label>
+                <div>
+                    <button type="button" class="btn-option btn-vanphong" onclick="showLocationAlert('Văn phòng')">Văn phòng</button>
+                    <button type="button" class="btn-option btn-nharieng" onclick="showLocationAlert('Nhà riêng')">Nhà riêng</button>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Nút Lưu -->
+            <div>
+                <button type="button" class="btn-save" onclick="handleSave()">Lưu</button>
+            </div>
+        </form>
+    </div>
+    <script src="~/Scripts/myJVS/BT2.js"></script>
+</body>
+</html>

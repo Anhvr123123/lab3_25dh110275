@@ -1,0 +1,102 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Scripts/myJVS/BT5.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bài tập 5 - Progress Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            gap: 40px;
+            margin: 0;
+        }
+
+        .progress-container {
+            width: 500px;
+            height: 30px;
+            background-color: #e5e5e5;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            border-radius: 15px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 15px;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            transition: width 0.1s ease;
+        }
+
+        .purple {
+            background-color: #6b21a8;
+        }
+
+        .green {
+            background-color: #046c4e;
+        }
+
+        .orange {
+            background-color: #ea580c;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #2563eb;
+            color: white;
+        }
+
+            button:hover {
+                background-color: #1d4ed8;
+            }
+    </style>
+</head>
+<body>
+    <!-- Thanh progress 1: 60% -->
+    <div class="progress-container">
+        <div id="bar1" class="progress-bar purple">0%</div>
+    </div>
+
+    <!-- Thanh progress 2: 30% -->
+    <div class="progress-container">
+        <div id="bar2" class="progress-bar green">0%</div>
+    </div>
+
+    <!-- Thanh progress 3: 53% -->
+    <div class="progress-container">
+        <div id="bar3" class="progress-bar orange">0%</div>
+    </div>
+
+    <div class="controls">
+        <button id="btnStart">Chạy tiến trình</button>
+        <button id="btnReset">Reset</button>
+    </div>
+</body>
+</html>

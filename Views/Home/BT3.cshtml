@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Scripts/myJVS/BT3.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đồng hồ kỹ thuật số</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Khung chứa đồng hồ màu đen */
+        .clock-container {
+            background-color: #000000;
+            width: 500px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Chữ hiển thị thời gian màu xanh cyan */
+        .clock-text {
+            color: #00d8ff;
+            font-size: 60px;
+            letter-spacing: 2px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clock-container">
+        <div id="digitalClock" class="clock-text">00:00:00 AM</div>
+    </div>
+</body>
+</html>

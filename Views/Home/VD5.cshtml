@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VD5</title>
+    <script type="text/javascript">
+        function Respond() {
+            var checkUni = document.getElementsByName("uni");
+            if (checkUni[0].checked == true) {
+                document.getElementById("huflit").innerHTML = 'Tôi là sinh viên IT'
+            }
+            if (checkUni[1].checked == true) {
+                document.getElementById("huflit").innerHTML = 'Tôi không phải là sinh viên IT'
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h4>Bạn có phải là gay k?</h4>
+    <input type="radio" name="uni" />Phải<br />
+    <input type="radio" name="uni" />Không phải<br />
+    <input type="submit" value="Trả lời" onclick="Respond();"/><br />
+    <span id="huflit"></span>
+
+</body>
+</html>

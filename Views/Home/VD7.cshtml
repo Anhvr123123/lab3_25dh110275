@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VD7</title>
+    <script language="javascript">
+        function genderChanged(obj) {
+            var message = document.getElementById('show_message');
+            var value = obj.value;
+            if (value === '') {
+                message.innerHTML = "Bạn chưa chọn giới tính";
+            }
+            else if (value === 'nam') {
+                message.innerHTML = "Bạn đã chọn giới tính nam";
+            }
+            else if (value === 'nu') {
+                message.innerHTML = "Bạn đã chọn giới tính nữ";
+            }
+        };
+    </script>
+</head>
+<body>
+    <h2>Chọn giới tính</h2>
+    <p>In ra thông báo khi giới tính được thay đổi </p>
+    <select id="gender" onchange="genderChanged(this)">
+        <option value=""> -- Chọn -- </option>
+        <option value="nam">Nam</option>
+        <option value="nu"> Nữ </option>
+    </select>
+    <p style="color: red" id="show_message"></p>
+</body>
+</html> 
